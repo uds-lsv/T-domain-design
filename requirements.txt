@@ -1,0 +1,15 @@
+numpy
+pandas
+scipy
+scikit-learn
+biopython
+tqdm
+torch
+lightning
+peft
+fair-esm
+transformers
+evodiff
+torch_geometric
+ipykernel
+biotite==0.37.0
