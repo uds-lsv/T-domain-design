@@ -1,0 +1,1 @@
+from .protein.base import BaseProtein as BaseProtein
