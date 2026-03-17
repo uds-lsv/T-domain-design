@@ -1,3 +1,6 @@
+# =========================================
+# Core scientific + ML stack
+# =========================================
 numpy
 pandas
 scipy
@@ -6,10 +9,25 @@ biopython
 tqdm
 torch
 lightning
-peft
-fair-esm
 transformers
+peft
+ipykernel
+
+# =========================================
+# PLM stack profile (choose ONE path)
+# =========================================
+# Default/recommended for this repo: ESMC/ESM3 path
+esm
+
+# Alternative ESM2 path (uncomment and disable `esm` above)
+# fair-esm
+
+# =========================================
+# Optional generation/evaluation dependencies
+# =========================================
 evodiff
 torch_geometric
-ipykernel
 biotite==0.37.0
+
+# Optional helper package for model/auth workflows
+# huggingface_hub

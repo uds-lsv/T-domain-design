@@ -31,7 +31,7 @@ import numpy as np
 #    - Update the exception message with your specific environment names
 
 env = os.environ['CONDA_DEFAULT_ENV']
-if env == 'workspace':
+if env == 'esm3':
     # ESM3/ESMC environment - newer ESM library with multimodal capabilities
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     from esm.models.esmc import ESMC

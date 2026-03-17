@@ -1,0 +1,26 @@
+# Core scientific stack
+numpy
+pandas
+scipy
+scikit-learn
+tqdm
+biopython
+
+# Deep learning stack
+torch
+lightning
+peft
+transformers
+
+# Notebook support
+ipykernel
+
+# Primary PLM stack for this folder (ESMC)
+esm
+
+# NOTE:
+# If you want to run ESM2 workflows instead of ESMC, use fair-esm and
+# avoid mixing both PLM stacks in the same environment.
+# Example switch:
+#   - remove/comment `esm`
+#   - add `fair-esm`
