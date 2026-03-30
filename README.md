@@ -4,7 +4,6 @@ Code and workflows accompanying the preprint:
 
 **Generative AI designs functional thiolation domains for reprogramming non-ribosomal peptide synthetases**  
 bioRxiv (2026), DOI: https://doi.org/10.64898/2026.03.03.709401  
-Preprint page: https://www.biorxiv.org/content/10.64898/2026.03.03.709401v1
 
 ## Project Overview
 
@@ -34,9 +33,6 @@ The codebase currently provides:
 		- `src/models/` supervised and fine-tuning model implementations
 		- `src/eval/` evaluation utilities
 		- `src/protein/`, `src/utils/` protein and helper utilities
-- `scripts/`:
-	- additional analysis/utility scripts and notebooks
-	- note: some scripts use older hardcoded paths and may require adaptation
 - `ProteinMPNN/`:
 	- git submodule mirror of ProteinMPNN
 
@@ -126,18 +122,18 @@ Generated FASTA files in `data/` (for quick inspection/examples):
 
 If you use this repository or build on the methods, please cite the associated preprint:
 
-- Bülbül EF, Bang S, George K, et al. Generative AI designs functional thiolation domains for reprogramming non-ribosomal peptide synthetases. bioRxiv (2026). https://doi.org/10.64898/2026.03.03.709401
+- Bülbül EF, Bang S, George K, et al. Generative AI designs functional thiolation domains for reprogramming non-ribosomal peptide synthetases. bioRxiv (2026)
 
 BibTeX:
 
 ```bibtex
-@article{bulbul2026generative,
-	title   = {Generative AI designs functional thiolation domains for reprogramming non-ribosomal peptide synthetases},
-	author  = {B\"ulb\"ul, Emre F. and Bang, Seounggun and George, Kevin and others},
-	journal = {bioRxiv},
-	year    = {2026},
-	doi     = {10.64898/2026.03.03.709401},
-	url     = {https://www.biorxiv.org/content/10.64898/2026.03.03.709401v1}
+@article{buelbuel2026generative,
+  title={Generative AI designs functional thiolation domains for reprogramming non-ribosomal peptide synthetases},
+  author={Buelbuel, Emre F and Bang, Seounggun and Geroge, Kevin and Bianchi, Gabriele and Raj, Prateek and Chung, Seonyong and Pauline, Vincent and Hochstrasser, Ramon and Minas, Hannah A and Elgaher, Walid AM and others},
+  journal={bioRxiv},
+  pages={2026--03},
+  year={2026},
+  publisher={Cold Spring Harbor Laboratory}
 }
 ```
 
