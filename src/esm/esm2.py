@@ -11,14 +11,18 @@ class ESM2():
         model = ESM2(model_path='/path/to/esm2_t33_650M_UR50D.pt', device='gpu')
     """
     
-    def __init__(self, model_path, device='cpu') -> None:
+    def __init__(self, model_path=None, device='cpu') -> None:
         """Initialize ESM2 model.
         
         Args:
             model_path: Path to ESM2 model checkpoint
             device: Device to use ('cpu' or 'gpu')
         """
-        self.model, self.alphabet = esm.pretrained.load_model_and_alphabet(model_path)
+        if model_path is None:
+            self.model, self.alphabet = esm.pretrained.esm2_t33_650M_UR50D()
+            model_path = 'facebook/esm2_t33_650M_UR50D'
+        else:
+            self.model, self.alphabet = esm.pretrained.load_model_and_alphabet(model_path)
         self.batch_converter = self.alphabet.get_batch_converter()
         self.model.eval()
         self.device = device

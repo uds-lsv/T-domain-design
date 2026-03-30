@@ -6,8 +6,8 @@ import torch
 
 from DomainPrediction import BaseProtein
 
-root = '../..'
-data_path = os.path.join(root, 'Data/')
+root = '..'
+data_path = os.path.join(root, 'data/')
 
 ## Read Protein
 # protein = BaseProtein(file=os.path.join(data_path, 'GxpS_ATC_AF.pdb'))
@@ -27,10 +27,8 @@ from DomainPrediction.utils import helper
 
 class esmFold():
     def __init__(self, device='cpu') -> None:
-        self.model = EsmForProteinFolding.from_pretrained("/data/users/kgeorge/workspace/esm2/esmfold")
-        self.tokenizer = AutoTokenizer.from_pretrained("/data/users/kgeorge/workspace/esm2/esmfold")
-        # self.model = EsmForProteinFolding.from_pretrained("facebook/esmfold_v1")
-        # self.tokenizer = AutoTokenizer.from_pretrained("facebook/esmfold_v1")
+        self.model = EsmForProteinFolding.from_pretrained("facebook/esmfold_v1")
+        self.tokenizer = AutoTokenizer.from_pretrained("facebook/esmfold_v1")
         self.device = device
 
         if self.device == 'gpu':
@@ -62,7 +60,7 @@ class esmFold():
         return outputs
     
     @staticmethod
-    def output_to_pdb(output: Dict, file: str, save_meta: bool = True):
+    def output_to_pdb(output: Dict, file: str, save_meta: bool = False):
         '''
             Adapted from https://github.com/huggingface/transformers/blob/979d24e7fd82a10d1457d500bef8ec3b5ddf2f8a/src/transformers/models/esm/modeling_esmfold.py#L2292
         '''
@@ -103,7 +101,7 @@ class esmFold():
 esmfold = esmFold(device='gpu')
 
 ## save pdbs from a fasta file
-save_path = os.path.join(data_path, 'esm3_experiments/gxps_exp/gxps_pdbs')
-gen = os.path.join(data_path, 'esm3_experiments/gxps_exp/gxps_esm3_1000.fasta')
+save_path = os.path.join(data_path)
+gen = os.path.join(data_path, 'esm3_gen.fasta')
 esmfold.structures_from_fasta(file=gen, save_path=save_path)
 
